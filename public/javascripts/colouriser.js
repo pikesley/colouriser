@@ -8,8 +8,7 @@ function spectrum(value, start, end) {
 
   spec = []
 
-  for(i = 0; i < value - 1; i++) {
-  }
+  
 
   spec.push(end)
 
@@ -17,10 +16,29 @@ function spectrum(value, start, end) {
 }
 
 function steps(start, end, steps) {
-  steps = steps - 1
-  red = Math.floor((end[0] - start[0]) / steps)
-  green = Math.floor((end[1] - start[1]) / steps)
-  blue = Math.floor((end[2] - start[2]) / steps)
+  a = []
+  console.log(start, end, steps)
+  for(i = 0; i < 3; i++) {
+    x = (end[i] - start[i]) / (steps - 1)
 
-  return [red, green, blue]
+    switch(x > 0) {
+      case true:
+        a[i] = Math.floor(x)
+        break
+      case false:
+        a[i] = Math.ceil(x)
+        break
+    }
+  }
+
+  return a
+}
+
+function increment(array, steps) {
+  a = []
+  for(i = 0; i < 3; i++) {
+    a[i] = array[i] + steps[i]
+  }
+
+  return a
 }
