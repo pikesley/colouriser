@@ -58,13 +58,13 @@ function limiter(value) {
   return Math.round(value)
 }
 
-function percentage(value, base, target) {
-  if(base === undefined) {
-    start = [255, 255, 255]
-  }
-
+function percentage(value, target, base) {
   if(target === undefined) {
     target = [255, 0, 0]
+  }
+  
+  if(base === undefined) {
+    start = [255, 255, 255]
   }
 
   a = []

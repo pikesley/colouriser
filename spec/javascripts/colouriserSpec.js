@@ -96,6 +96,20 @@ describe('colouriser', function() {
       })
     })
 
+    describe('with a different target colour', function() {
+      it('handles 100% with blue as a target', function() {
+        expect(percentage(100, [0, 0, 255])).toEqual('rgb(0, 0, 255)')
+      })
+
+      it('handles 33% with green as a target', function() {
+        expect(percentage(33, [0, 255, 0])).toEqual('rgb(170, 255, 170)')
+      })
+
+    //  it('handles 50% with Pikesley Orange as a target', function () {
+    //    expect(percentage(50, [250, 129, 0])).toEqual('rgb(125, 64, 0)')
+    //  })
+    })
+
     it('gives a proportion', function() {
       expect(proportion(100)).toEqual(255)
       expect(proportion(0)).toEqual(0)
