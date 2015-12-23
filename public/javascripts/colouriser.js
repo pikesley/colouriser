@@ -62,7 +62,7 @@ function percentage(value, target, base) {
   if(target === undefined) {
     target = [255, 0, 0]
   }
-  
+
   if(base === undefined) {
     start = [255, 255, 255]
   }
@@ -92,8 +92,4 @@ function percentage(value, target, base) {
   }
 
   return rgbFormat(a)
-}
-
-function proportion(value) {
-  return Math.floor((255 * value) / 100)
 }

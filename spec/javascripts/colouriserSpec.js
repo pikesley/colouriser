@@ -105,15 +105,17 @@ describe('colouriser', function() {
         expect(percentage(33, [0, 255, 0])).toEqual('rgb(170, 255, 170)')
       })
 
-    //  it('handles 50% with Pikesley Orange as a target', function () {
-    //    expect(percentage(50, [250, 129, 0])).toEqual('rgb(125, 64, 0)')
-    //  })
-    })
+      it('handles 50% with magenta as a target', function () {
+        expect(percentage(50, [255, 0, 255])).toEqual('rgb(255, 127, 255)')
+      })
 
-    it('gives a proportion', function() {
-      expect(proportion(100)).toEqual(255)
-      expect(proportion(0)).toEqual(0)
-      expect(proportion(50)).toEqual(127)
+      it('handles 25% with magenta as a target', function () {
+        expect(percentage(25, [255, 0, 255])).toEqual('rgb(255, 191, 255)')
+      })
+
+    //  it('handles 50% with half-green as a target', function() {
+    //    expect(percentage(50, [0, 127, 0])).toEqual('rgb(63, 127, 63)')
+    //  })
     })
   })
 })
