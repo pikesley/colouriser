@@ -1,0 +1,24 @@
+<h1 id='words'>
+  This is a string
+</h1>
+
+<h1 id='out'></h1>
+
+<script src='https://code.jquery.com/jquery-2.1.4.min.js'></script>
+<script src='public/javascripts/colouriser.js'></script>
+<script>
+var main = function() {
+  var t = $('#words').text().trim()
+  var colours = cssSpectrum(t.length, [0, 0, 0], [127, 127, 127])
+
+  for (var x = 0; x < t.length; x++)
+  {
+    var c = t.charAt(x);
+    var e = $('<span>').text(c)
+    e.css('color', colours[x])
+    $('#out').append(e);
+  }
+}
+
+$(document).ready(main);
+</script>
