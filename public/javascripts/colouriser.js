@@ -20,8 +20,12 @@ function cssSpectrum(value, start, end) {
   var spec = spectrum(value, start, end)
 
   return spec.map(function(triplet) {
-    return 'rgb(' + triplet.join(', ') + ')'
+    return rgbFormat(triplet)
   })
+}
+
+function rgbFormat(triplet) {
+  return 'rgb(' + triplet.join(', ') + ')'
 }
 
 function steps(start, end, steps) {
@@ -52,4 +56,44 @@ function limiter(value) {
   }
 
   return Math.round(value)
+}
+
+function percentage(value, base, target) {
+  if(base === undefined) {
+    start = [255, 255, 255]
+  }
+
+  if(target === undefined) {
+    target = [255, 0, 0]
+  }
+
+  a = []
+
+  /*if(value === 100) {
+    a = [255, 0, 0]
+  }
+  if(value === 75) {
+    a = [255, 63, 63]
+  }
+  if(value === 50) {
+    a = [255, 127, 127]
+  }
+  if(value === 25) {
+    a = [255, 191, 191]
+  }
+  if(value === 0) {
+    a = [255, 255, 255]
+  }*/
+
+  for(i = 0; i < 3; i++) {
+    span = start[i] - target[i]
+    x = 255 - (span * (value / 100))
+    a[i] = Math.floor(x)
+  }
+
+  return rgbFormat(a)
+}
+
+function proportion(value) {
+  return Math.floor((255 * value) / 100)
 }

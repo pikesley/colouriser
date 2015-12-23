@@ -74,5 +74,32 @@ describe('colouriser', function() {
   })
 
   describe('gives a colour as a percentage', function() {
+    describe('with default colours', function() {
+      it('handles 100%', function() {
+        expect(percentage(100)).toEqual('rgb(255, 0, 0)')
+      })
+
+      it('handles 75%', function() {
+        expect(percentage(75)).toEqual('rgb(255, 63, 63)')
+      })
+
+      it('handles 50%', function() {
+        expect(percentage(50)).toEqual('rgb(255, 127, 127)')
+      })
+
+      it('handles 25%', function() {
+        expect(percentage(25)).toEqual('rgb(255, 191, 191)')
+      })
+
+      it('handles 0%', function() {
+        expect(percentage(0)).toEqual('rgb(255, 255, 255)')
+      })
+    })
+
+    it('gives a proportion', function() {
+      expect(proportion(100)).toEqual(255)
+      expect(proportion(0)).toEqual(0)
+      expect(proportion(50)).toEqual(127)
+    })
   })
 })
