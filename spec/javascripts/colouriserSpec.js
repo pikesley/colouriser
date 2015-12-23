@@ -112,10 +112,6 @@ describe('colouriser', function() {
       it('handles 25% with magenta as a target', function () {
         expect(percentage(25, [255, 0, 255])).toEqual('rgb(255, 191, 255)')
       })
-
-    //  it('handles 50% with half-green as a target', function() {
-    //    expect(percentage(50, [0, 127, 0])).toEqual('rgb(63, 127, 63)')
-    //  })
     })
   })
 })
