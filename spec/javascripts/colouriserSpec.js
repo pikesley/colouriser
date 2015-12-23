@@ -62,4 +62,17 @@ describe('colouriser', function() {
       expect(limiter(-3)).toEqual(0)
     })
   })
+
+  describe('format for CSS', function() {
+    it('formats the spectrum for CSS use', function() {
+      expect(cssSpectrum(2)).toEqual(
+        [
+          'rgb(0, 0, 0)',
+          'rgb(255, 255, 255)'
+        ])
+    })
+  })
+
+  describe('gives a colour as a percentage', function() {
+  })
 })

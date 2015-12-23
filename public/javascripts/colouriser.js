@@ -16,6 +16,14 @@ function spectrum(value, start, end) {
   return spec
 }
 
+function cssSpectrum(value, start, end) {
+  var spec = spectrum(value, start, end)
+
+  return spec.map(function(triplet) {
+    return 'rgb(' + triplet.join(', ') + ')'
+  })
+}
+
 function steps(start, end, steps) {
   a = []
   for(i = 0; i < 3; i++) {
