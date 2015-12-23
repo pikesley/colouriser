@@ -69,25 +69,9 @@ function percentage(value, target, base) {
 
   a = []
 
-  /*if(value === 100) {
-    a = [255, 0, 0]
-  }
-  if(value === 75) {
-    a = [255, 63, 63]
-  }
-  if(value === 50) {
-    a = [255, 127, 127]
-  }
-  if(value === 25) {
-    a = [255, 191, 191]
-  }
-  if(value === 0) {
-    a = [255, 255, 255]
-  }*/
-
   for(i = 0; i < 3; i++) {
     span = start[i] - target[i]
-    x = 255 - (span * (value / 100))
+    x = Math.max.apply(null, target) - (span * (value / 100))
     a[i] = Math.floor(x)
   }
 
