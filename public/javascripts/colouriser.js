@@ -64,13 +64,13 @@ function percentage(value, target, base) {
   }
 
   if(base === undefined) {
-    start = [255, 255, 255]
+    base = [255, 255, 255]
   }
 
   a = []
 
   for(i = 0; i < 3; i++) {
-    span = start[i] - target[i]
+    span = base[i] - target[i]
     x = Math.max.apply(null, target) - (span * (value / 100))
     a[i] = Math.floor(x)
   }

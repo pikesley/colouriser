@@ -113,5 +113,21 @@ describe('colouriser', function() {
         expect(percentage(25, [255, 0, 255])).toEqual('rgb(255, 191, 255)')
       })
     })
+
+    describe('with a different base colour', function() {
+      pending()
+      
+      it('handles 100% with black as a base', function() {
+        expect(percentage(100, [255, 0, 0], [0, 0, 0])).toEqual('rgb(255, 0, 0)')
+      })
+
+      it('handles 50% with black as a base', function() {
+        expect(percentage(50, [255, 0, 0], [0, 0, 0])).toEqual('rgb(127, 0, 0)')
+      })
+
+      it('handles 0% with black as a base', function() {
+        expect(percentage(0, [255, 0, 0], [0, 0, 0])).toEqual('rgb(0, 0, 0)')
+      })
+    })
   })
 })
