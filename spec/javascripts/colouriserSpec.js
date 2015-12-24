@@ -115,8 +115,8 @@ describe('colouriser', function() {
     })
 
     describe('with a different base colour', function() {
-      pending()
-      
+      pending('because I clearly do not understand the problem')
+
       it('handles 100% with black as a base', function() {
         expect(percentage(100, [255, 0, 0], [0, 0, 0])).toEqual('rgb(255, 0, 0)')
       })
